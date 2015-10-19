@@ -1,30 +1,46 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+@font-face {
+   font-family: openSans;
+   src: url(fonts/Open_Sans/OpenSans-Regular.ttf);
 }
 
-.menu:before {
-  content: "[";
+* {margin: 0; padding: 0;}
+
+body {font-family: openSans, arial, "Times New Roman"; background-image: url("images/background.png"); background-repeat: repeat-x; 
+    padding-top: 70px;}
+
+.navbar-default {background-image: url("images/backgroundHeader.png");}
+
+.navbar-brand {padding: 5px 0px;}
+
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-brand {
+  color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a {
+  color:#D8D4D2;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFF;
+  background-color: transparent;
 }
 
-.menu:after {
-  content: "]";
-}
+.contentBackground {background-color: #554A3C}
 
-.menu > li {
-  display: inline;
-}
+.footerBottom img {padding: 10px 0;}
+.footerBottom p {padding-top: 16px; color: white; font-size: 11px; font-style: italic;}
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+.transparentBackground {background-image: url("images/transparentBackground.png"); background-repeat: no-repeat;}
+.transparentBackground p {color: white; font-size: 12px; padding-top: 3px}
