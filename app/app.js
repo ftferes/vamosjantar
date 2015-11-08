@@ -6,14 +6,23 @@ angular.module('myApp', [
   	'myApp.menu',
   	'myApp.notFound',
   	'myApp.home',
-  	'myApp.contact',
-    'myApp.whoWeAre',
+    'myApp.establishment',
+    'myApp.successEmail',
   	'myApp.header',
   	'myApp.footer',
     'myApp.version',
     'ui.bootstrap'
 ])
 
-.config(['$routeProvider', function($routeProvider) {
-	$routeProvider.otherwise({redirectTo: '/notFound'});
-}]);
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}])
+
+// .config(['$routeProvider', function($routeProvider) {
+// 	$routeProvider.otherwise({redirectTo: '/notFound'});
+// }]);
+
+
+

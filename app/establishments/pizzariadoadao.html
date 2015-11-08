@@ -1,0 +1,150 @@
+<div class="container">
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="detailsMenu">
+				<div class="col-md-3">			
+					<img class="img-responsive center-block" ng-src="{{establishment.logo}}">		
+				</div>
+				<div class="col-md-9">
+					<div class="row basicInformationsMenu">
+						<div class="col-sm-4">		
+							<h2>Telefones</h2>
+							<p ng-repeat="phone in establishment.phones track by $index" ng-bind="phone"></p>
+						</div>
+						<div class="col-sm-4">		
+							<h2>Endereço</h2>
+							<p ng-bind="establishment.address.street"></p>
+							<p ng-bind="establishment.address.neighborhood"></p>
+							<p>nº {{establishment.address.number}}</p>
+						</div>
+						<div class="col-sm-4">		
+							<h2>Horário</h2>
+							<p ng-bind="establishment.openingHours.days"></p>
+							<p ng-bind="establishment.openingHours.times"></p>
+							<p style="font-style: italic;" ng-bind="establishment.openingHours.note"></p>
+						</div>	
+					</div>
+					<div class="row additionalBasicInformationsMenu">
+						<div class="col-sm-3">
+							<div class="additionalBasicInformationsMenuItem">
+								<p>R$ {{establishment.notes.deliveryFee}}</p>
+								<h5>Taxa de entrega</h5>
+							</div>
+						</div>	
+						<div class="col-sm-3">
+							<div class="additionalBasicInformationsMenuItem">
+								<p ng-bind="establishment.notes.approximateTimeDelivery"></p>
+								<h5>Tempo aproximado de entrega</h5>
+							</div>
+						</div>	
+						<div class="col-sm-3">
+							<div class="additionalBasicInformationsMenuItem">
+								<p ng-bind="establishment.notes.acceptedCards"></p>
+								<h5>Aceitamos cartões de crédito</h5>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="additionalBasicInformationsMenuFacebook">
+								<a href="{{establishment.notes.facebookLink}}"><p class="text-center">Confira nosso Facebook</p></a>
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="detailsMenuItens">
+				<div class="transparentBackgroundMenu">
+					<h3>Cardápio</h3>
+				</div>
+				<div class="row categoryMenuItem" ng-repeat="menu in establishment.menu">
+					<div class="col-xs-12">
+						<h4 ng-bind="menu.title"></h4>
+					</div>
+					<div class="col-sm-6" ng-repeat="item in menu.items">
+						<div class="categoryMenuItemDetails" >
+							<h4 ng-bind="item.name"></h4>
+							<p ng-bind="item.ingredients"></p>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row">
+      	<flex-slider class="col-xs-12" slider-id="slider" flex-slide="photo in establishment.photos track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false">
+		    <li><img ng-src="{{photo}}"></li>
+      	</flex-slider>
+
+   		<flex-slider class="col-xs-12" style="margin-top:-55px; margin-bottom:-40px" slider-id="carousel" flex-slide="photo in establishment.photos track by $index" animation="slide" animation-loop="false" item-width="100px"  min-items="2" max-items="4" as-nav-for="#slider" slideshow="false" control-nav="false" move="1">
+		    <li><img ng-src="{{photo}}"></li>
+      	</flex-slider>
+	</div>
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="detailsMenuItens">
+				<div class="transparentBackgroundMenu">
+					<h3>Quem Somos</h3>
+				</div>
+				<div class="col-sm-6 whoWeAretext">
+					<p ng-repeat="text in establishment.whoWeAre.texts track by $index" ng-bind="text"></p>
+				</div>
+				<div class="col-sm-6" style="padding:5px">
+					<img style="border:solid 3px white" class="img-responsive center-block" ng-src="{{establishment.whoWeAre.photo}}">	
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row" >
+		<div class="col-md-12">
+			<div class="detailsMenuItens">
+				<div class="transparentBackground">
+					<h3 style="margin:0;">Venham nos conhecer</h3>
+				</div>
+      			<iframe ng-src="{{establishment.googleMapsLink | trusted}}" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-6" ng-repeat="video in establishment.videos track by $index">
+			<iframe ng-src="{{video | trusted}}" height="320"  width="100%" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+  
+
+
+
+
+</div>

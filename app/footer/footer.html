@@ -1,19 +1,44 @@
-<footer class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-9 transparentBackground">
-				<p>Confira abaixo os novos estabelecimentos cadastrados no vamosjantar</p>
+<div id="footer" ng-hide="showThisMenu('successEmail')">
+	<div class="footer">
+		<div class="container">
+
+
+
+			<div class="row">
+				<div class="col-md-8">
+					<div class="transparentBackground">
+						<h3>Novos estabelecimentos cadastrados</h3>
+					</div>
+					<flex-slider flex-slide="s in slides track by $index" animation="slide" min-items="2" max-items="3" mousewheel="true" 
+						item-width="100px" move="1" style="margin-bottom:-50px">
+			   			<li><img style="padding: 3px" ng-src="{{s.image}}"></li>
+					</flex-slider>
+				</div>
+				<div class="col-md-4 text-center">
+					<div class="fb-page" data-href="https://www.facebook.com/sonorumapp" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/sonorumapp"><a href="https://www.facebook.com/sonorumapp">Sonorum app</a></blockquote></div></div>						
+				</div>
 			</div>
-		</div>
-		<div class="row contentBackground footerBottom">
-			<div class="col-xs-8 text-left">
-    			<p class="text-muted">Copyright 2015 © VamosJantar todos os direitos reservados</p>
-    		</div>
-    		<div class="col-xs-4 text-right">
-	    		<a ng-href="http://www.facebook.com"><img src="images/facebookIcon.png"></a>
-	    		<a ng-href="http://www.twitter.com"><img src="images/twitterIcon.png"></a>
-	    		<a ng-href="http://www.google.com"><img src="images/googleIcon.png"></a>
+
+
+
+
+			<div class="row" style="margin-top:1rem">
+				<div class="col-xs-12">
+					<div class="contentBackground footerBottom">
+						<div class="col-xs-7 text-left">
+			    			<p class="text-muted">Copyright 2015 © VamosJantar todos os direitos reservados</p>
+			    		</div>
+			    		<div class="col-xs-5 text-right">
+				    		<a ng-href="http://www.facebook.com"><img src="images/facebookIcon.png"></a>
+				    		<a ng-href="http://www.twitter.com"><img src="images/twitterIcon.png"></a>
+				    		<a ng-href="http://www.google.com"><img src="images/googleIcon.png"></a>
+				    	</div>
+				    </div>
+			    </div>
 	    	</div>
-    	</div>
+		</div>
 	</div>
-</footer>
+</div>
+
+
+

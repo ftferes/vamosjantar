@@ -1,1 +1,160 @@
-<p style="border:solid 1px black">Home</p>
+<section id="top" class="container">
+
+
+
+
+
+	<section class="row" style="margin-top:1rem">
+		<div class="col-xs-12" style="margin-bottom:-62px">
+			<flex-slider flex-slide="s in slides track by $index" animation="slide">
+				<li style="position:relative;">
+					<a href="" class="sliderHome">
+						<h3>{{s.name}}</h3>
+						<h3>{{s.telephone}}</h3>
+						<h3 class="hidden-xs">{{s.address}}</h3>
+					</a>
+					<img class="img-responsive" ng-src="{{s.image}}">			
+				</li>
+			</flex-slider>
+		</div>
+	</section>
+
+
+
+
+
+	<section id="foodTypesList" class="row" ng-init="selected = ''; open = false">
+		<div class="col-sm-12">
+			<div class="foodTypes">
+				<div class="col-sm-3 col-xs-6 text-center">			
+					<a ng-click="selected = 'Restaurantes'; setEstablishments('restaurants'); open = 'true'" href="#foodTypesList" du-smooth-scroll du-scrollspy offset="30" duration="1000">
+						<div class="foodTypeDetails">
+							<img class="img-responsive maxWidth" ng-src="{{restaurants}}">
+							<div class="foodTypeDetailsName">
+								<h2>RESTAURANTES</h2>
+							</div>				
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-3 col-xs-6 text-center">		
+					<a ng-click="selected = 'Pizzarias'; setEstablishments('pizzerias'); open = 'true'" href="#foodTypesList" du-smooth-scroll du-scrollspy offset="30" duration="1000">	
+						<div class="foodTypeDetails">
+							<img class="img-responsive maxWidth" ng-src="{{pizzaria}}">
+							<div class="foodTypeDetailsName">
+								<h2>PIZZARIAS</h2>
+							</div>				
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-3 col-xs-6 text-center">
+					<a ng-click="selected = 'Lanchonetes'; setEstablishments('snackBars'); open = 'true'" href="#foodTypesList" du-smooth-scroll du-scrollspy offset="30" duration="1000">			
+						<div class="foodTypeDetails">
+							<img class="img-responsive maxWidth" ng-src="{{snackBar}}">
+							<div class="foodTypeDetailsName">
+								<h2>LANCHONETES</h2>
+							</div>				
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-3 col-xs-6 text-center">
+					<a ng-click="selected = 'Encomendas'; setEstablishments('orders'); open = 'true'" href="#foodTypesList" du-smooth-scroll du-scrollspy offset="30" duration="1000">			
+						<div class="foodTypeDetails">
+							<img class="img-responsive maxWidth" ng-src="{{orders}}">
+							<div class="foodTypeDetailsName">
+								<h2>ENCOMENDAS</h2>
+							</div>				
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section  ng-show="open" class="row box-one" >
+
+		<!-- <div class="row hidden-xs" style="margin-top: -20px">
+			<div class="col-xs-3" ng-show="selected == 'Restaurantes'">
+				<img class="img-responsive center-block" ng-src="{{arrow}}">
+			</div>	
+			<div class="col-xs-3 col-xs-offset-3" ng-show="selected == 'Pizzarias'">
+				<img class="img-responsive center-block" ng-src="{{arrow}}">
+			</div>
+			<div class="col-xs-3 col-xs-offset-6" ng-show="selected == 'Lanchonetes'">
+				<img class="img-responsive center-block" ng-src="{{arrow}}">
+			</div>
+			<div class="col-xs-3 col-xs-offset-9" ng-show="selected == 'Encomendas'">
+				<img class="img-responsive center-block" ng-src="{{arrow}}">
+			</div>	
+		</div> -->
+
+
+		<div class="col-xs-12 titleHome">
+			<p class="pull-left">{{selected}}</p>
+			<a class="pull-right" href="" ng-click="open = false; selected = ''"><img class="img-responsive pull-right" ng-src="{{exit}}" style="padding-top:8px"></a>
+		</div>
+
+		<div ng-repeat="establishment in establishments" >
+			<a href="" ng-click="goTo(establishment.url)">
+				<div class="col-xs-6 col-sm-3" style="margin-bottom: 20px;">
+					<div class="bodyHome">
+						<img class="img-responsive maxWidth" ng-src="{{establishment.image}}">
+						<div class="bodyHomeDetails">
+							<h3 class="text-center">{{establishment.telephone}}</h3>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="row">
+		<div id="whoWeAre" class="col-sm-6 form-box" style="margin-top:-20px">
+			<div class="form-top" style="background-color:#554A3C">
+				<div class="form-top-lef">
+					<h2 class="whoWeAreContactTitle">Quem Somos</h2>
+				</div>
+			</div>
+			<div class="form-bottom contact-form whoWeAreBody">
+				<h2><strong>Somos loucos por comida.</strong><h2> 
+				<h3>Acho que nossa primeira semelhança já começa por aí.</h3>
+				<h3><br>O <strong>“Vamos Jantar”</strong> é um site especializado em cardápios e promoção dos principais restaurantes da região. Nascemos para oferecer a você as melhores opções e a oportunidade de sair de casa decidido e pronto para chamar o garçom.</h3>
+				<h3><br>Seja bem-vindo ao “Vamos Jantar”: <strong>a sua mais nova opção em lhe dar opções!</strong></h3>
+			</div>
+		</div>
+
+		<div id="contact" class="col-sm-6 form-box" style="margin-top:-20px">
+			<div class="form-top" style="background-color:#554A3C">
+				<div class="form-top-lef">
+					<h2 class="whoWeAreContactTitle">Contato</h2>					
+				</div>
+			</div>
+			<div class="form-bottom contact-form contactBody">
+				<form action="//formspree.io/ftferes@gmail.com" method="POST" name="form">
+					<div class="form-group">
+						<input type="email" name="email" placeholder="E-mail*" class="contact-email form-control" id="contact-email" required>
+					</div>
+					<div class="form-group">
+						<input type="text" name="name" placeholder="Nome" class="contact-subject form-control" id="contact-subject">
+					</div>
+					<div class="form-group">
+						<textarea name="message" placeholder="Mensagem*" class="contact-message form-control" id="contact-message" required></textarea>
+					</div>
+					<p class="text-right">* campos obrigatórios</p>
+					<button type="submit" value="Send" class="btn" style="margin-top:-40px">Enviar</button>
+					<input type="hidden" name="_next" value="/app/#/successEmail"/>
+				</form>
+			</div>
+		</div>
+	</section>     
+</section>
+
+
+

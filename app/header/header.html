@@ -1,23 +1,55 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#/"><img src="images/logo.png" alt="vamosjantar"></a>
-		</div>
+<div ng-hide="showThisMenu('successEmail')">
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">        
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#/">Página Inicial</a></li>      
-				<li><a href="#/whoWeAre">Quem Somos</a></li>  
-				<li><a href="#/contact">Contato</a></li>   
-			</ul>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a ng-click="goTo('/')" class="navbar-brand" href="#bodyId" du-smooth-scroll du-scrollspy offset="30" duration="1000" ><img src="images/logo.png" alt="vamosjantar"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">        
+				<ul class="nav navbar-nav navbar-right">
+					<li><a ng-click="goTo('/')" href="#bodyId" du-smooth-scroll du-scrollspy offset="30" duration="1000">Página Inicial</a></li>   
+					<li><a ng-click="goTo('/')" href="#footer" du-smooth-scroll du-scrollspy offset="30" duration="1000" >Quem Somos</a></li>  
+					<li><a ng-click="goTo('/')" href="#footer" du-smooth-scroll du-scrollspy offset="30" duration="1000" >Contato</a></li>   
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2 text-left hidden-xs">
+		    	<a ng-href="http://www.facebook.com"><img src="images/facebookIcon.png"></a>
+		    	<a ng-href="http://www.twitter.com"><img src="images/twitterIcon.png"></a>
+		    	<a ng-href="http://www.google.com"><img src="images/googleIcon.png"></a>
+		    </div>
+		    <div class="col-sm-10">
+				<ui-select ng-model="establishment.selected" theme="bootstrap" ng-disabled="disabled" on-select="goTo($item.url)" style="width: 70%;">
+		    		<ui-select-match placeholder="Procurar estabeleciments">{{$select.selected.name}}</ui-select-match>
+		    		<ui-select-choices repeat="establishment in establishments | filter: $select.search">
+		      			<span ng-bind-html="establishment.name | highlight: $select.search"></span>
+		      			<small ng-bind-html="establishment.code | highlight: $select.search"></small>
+		    		</ui-select-choices>
+		  		</ui-select>
+		    </div>
 		</div>
 	</div>
-</nav>
+
+
+	<div class="container-fluid noPadding">
+		<div class="noPadding">
+			<div class="cityName pull-right col-sm-6 noPadding" style="width: 23%;">
+				<p>JABOTICABAL</p>
+			</div>
+		</div>
+	</div>
+</div>

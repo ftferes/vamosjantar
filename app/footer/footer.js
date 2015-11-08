@@ -1,7 +1,23 @@
 'use strict';
 
-angular.module('myApp.footer', [])
+angular.module('myApp.footer', ['angular-flexslider'])
 
-.controller('FooterCtrl', [function() {
+.controller('FooterCtrl', ['$scope', '$location', function($scope, $location) {
+
+    $scope.showThisMenu = function(page) {
+        return page === $location.path().substring(1) ? true: false;
+    };
+
+	$scope.slides = [
+        {image: 'images/recentEstablishments/img1.jpg'},
+        {image: 'images/recentEstablishments/img2.jpg'},
+        {image: 'images/recentEstablishments/img3.jpg'},
+        {image: 'images/recentEstablishments/img1.jpg'},
+        {image: 'images/recentEstablishments/img2.jpg'},
+        {image: 'images/recentEstablishments/img3.jpg'},
+        {image: 'images/recentEstablishments/img1.jpg'},
+        {image: 'images/recentEstablishments/img2.jpg'},
+        {image: 'images/recentEstablishments/img3.jpg'}
+    ];
 
 }]);

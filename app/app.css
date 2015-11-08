@@ -1,46 +1,370 @@
-@font-face {
-   font-family: openSans;
-   src: url(fonts/Open_Sans/OpenSans-Regular.ttf);
-}
+@font-face {font-family: openSans; src: url(fonts/Open_Sans/OpenSans-Regular.ttf);}
 
 * {margin: 0; padding: 0;}
 
-body {font-family: openSans, arial, "Times New Roman"; background-image: url("images/background.png"); background-repeat: repeat-x; 
-    padding-top: 70px;}
+body {font-family: openSans, arial, "Times New Roman"; background-image: url("images/background.png"); background-repeat: repeat-x; padding-top: 70px; background-attachment: fixed;}
 
-.navbar-default {background-image: url("images/backgroundHeader.png");}
+/*Default styling here*/
+h1     {font-size: 2em;}
+h2     {font-size: 1.5em;}
+h3     {font-size: 1.17em;}
+h4     {font-size: 1em;}
+h5     {font-size: 0.83em;}
+h6     {font-size: 0.67em;}
+p      {font-size: 1em;}
+a      {font-size: 1em; text-decoration: none !important}
+button {outline: 0 !important;}
+input  {font-size: 1em !important}
+label  {font-size: 1em}
 
-.navbar-brand {padding: 5px 0px;}
+/*Little larger screen*/
+@media only screen and (min-width: 300px) {
+    h1     {font-size: 1.46em;}
+    h2     {font-size: 1.10em;}
+    h3     {font-size: 0.85em;}
+    h4     {font-size: 0.72em;}
+    h5     {font-size: 0.62em;}
+    h6     {font-size: 0.60em;}
+    p      {font-size: 0.73em;}
+    a      {font-size: 0.73em;}
+    button {outline: 0 !important;}
+    input  {font-size: 0.73em !important}
+    label  {font-size: 0.73em}
+}
+
+/*Pads and larger phones*/
+@media only screen and (min-width: 468px) {
+    h1     {font-size: 1.62em;}
+    h2     {font-size: 1.22em;}
+    h3     {font-size: 0.96em;}
+    h4     {font-size: 0.81em;}
+    h5     {font-size: 0.68em;}
+    h6     {font-size: 0.60em;}
+    p      {font-size: 0.81em;}
+    a      {font-size: 0.81em;}
+    button {outline: 0 !important;}
+    input  {font-size: 0.81em !important}
+    label  {font-size: 0.81em}
+
+}
+
+/*Larger pads*/
+@media only screen and (min-width: 768px) {
+    h1     {font-size: 1.8em; }
+    h2     {font-size: 1.35em; }
+    h3     {font-size: 1.06em;}
+    h4     {font-size: 0.9em;  }
+    h5     {font-size: 0.75em; }
+    h6     {font-size: 0.61em;}
+    p      {font-size: 0.9em; }
+    a      {font-size: 0.9em;}
+    button {outline: 0 !important;}
+    input  {font-size: 0.9em !important}
+    label  {font-size: 0.9em}
+}
 
 
-.navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-}
-.navbar-default .navbar-brand {
-  color: #777;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
-  background-color: transparent;
-}
-.navbar-default .navbar-text {
-  color: #777;
-}
-.navbar-default .navbar-nav > li > a {
-  color:#D8D4D2;
-}
+/*General*/
+.contentBackground {background-color: #554A3C; overflow: hidden}
+.noPadding {padding:0 !important}
+.flex-control-nav {bottom:0}
+.maxWidth {width: 100%}
+/*End - General*/
+
+/*Header*/
+.navbar-default {background-image: url("images/backgroundHeader.jpg")}
+.navbar-brand {padding: 5px 0px}
+.navbar-default .navbar-nav > li > a {color:#D8D4D2}
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #FFF;
-  background-color: transparent;
+.navbar-default .navbar-nav > li > a:focus {color: #FFF; background-color: transparent;}
+.cityName {background-image: url("images/transparentBackgroundHeader.png"); background-repeat: no-repeat; margin-top: -30px}
+.cityName p {color:white; padding: 5px 0 5px 15px;}
+/*End - Header*/
+
+/*Footer*/
+.footer {margin-top:1.5rem; margin-bottom: 2rem}
+.footerBottom img {padding: 10px 0}
+.footerBottom p {padding-top: 16px; color: white; font-size: 11px; font-style: italic}
+.transparentBackground {background-image: url("images/transparentBackgroundHeader.png"); background-repeat: no-repeat}
+.transparentBackground h3 {color: white; padding:7px 0 10px 10px;}
+/*End - Footer*/
+
+/*Home - Slider*/
+.sliderHome{position:absolute; background-color:black; padding: 0px 20px 0px 20px; opacity: 0.8; right:0; top:10px}
+.sliderHome h3 {color:white; margin:9px; margin-right: 30px}
+/*End - Home - Slider*/
+
+/*Home - Type of foods*/
+.foodTypes{background-color:#554A3C; padding: 10px; margin-top: 20px; margin-bottom: 20px; border-radius:4px; overflow: hidden}
+.foodTypeDetails{position:relative; border:solid 3px #FFF; box-shadow: 4px 4px 2px rgba(50, 50, 50, 0.75);}
+@media only screen and (max-width: 768px) {
+    .foodTypeDetails{margin-bottom:20px;}
+}
+.foodTypeDetailsName{position:absolute; bottom:0; background-color:black; width:100%; opacity:0.8; color:white;}
+.foodTypeDetailsName h2{margin:8px;}
+/*End - Home - Type of foods*/
+
+/*Home - Type of foods details*/
+.titleHome {background-image: url("images/transparentBackgroundHeader.png"); background-repeat: no-repeat;}
+.titleHome p {color: white; font-size: 17px; padding-top: 3px}
+.bodyHome {border:solid 2px #FFF; box-shadow: 2px 2px 10px rgba(50, 50, 50, 0.75)}
+.bodyHomeDetails {background-color:black; width:100%; color:white; padding-top:5px; padding-bottom:0}
+.bodyHomeDetails h3 {padding-bottom: 6px; margin-bottom:0; margin-top:0; color:white}
+/*End - Home - Type of foods details*/
+
+/*Home - Who we are and Contact*/
+.whoWeAreContactTitle {color:white; margin: 10px 0 -5px 0}
+.whoWeAreBody {opacity:0.8; overflow: hidden; height:292px}
+.whoWeAreBody h2 {color:#554A3C; margin-top:0px; text-align:justify;}
+.whoWeAreBody h3 {color:#554A3C; margin-top:0px; text-align:justify;}
+.contactBody {opacity:0.8; padding-bottom:1rem !important}
+.contactBody p {font-size:10px; text-right}
+/*End - Home - Who we are and Contact*/
+
+/*Menu - Basic informations*/
+.detailsMenu{background-color:#E9E9E9; padding: 10px; margin-top: 1rem; margin-bottom: 2rem; overflow: hidden; 
+    border-top:solid 3px #554A3C; border-bottom:solid 3px #554A3C;}
+
+.detailsMenu img {border:solid 3px white}
+
+.basicInformationsMenu h2 {margin:0 0 5px 0}
+.basicInformationsMenu p{margin:0 0 5px 0}
+
+.additionalBasicInformationsMenu p {margin:0 0 2px 0; color:white}
+.additionalBasicInformationsMenu h5 {margin:0 0 0px 0; color:white}
+.additionalBasicInformationsMenuFacebook {padding:2px 8px 4px 8px; background-color: #43609C; box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);}
+.additionalBasicInformationsMenuFacebook a {text-decoration:none}
+.additionalBasicInformationsMenuFacebook p {margin:8px 0 5px 0; color:white}
+.additionalBasicInformationsMenu > div {margin-bottom:4px}
+.additionalBasicInformationsMenuItem {padding:2px 8px 4px 8px; background-color: #715E45; opacity:0.65; box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.5);} 
+/*End - Menu - Basic informations*/
+
+/*Menu - itens*/
+.transparentBackgroundMenu {background-image: url("images/transparentBackgroundHeader.png"); background-repeat: no-repeat}
+.transparentBackgroundMenu h3 {color: white; padding:7px 0 10px 10px; margin:0;}
+
+.detailsMenuItens{background-color:#E9E9E9; margin-bottom: 2rem; border-top:solid 3px #554A3C; border-bottom:solid 3px #554A3C; overflow: hidden;}
+
+.categoryMenuItem {margin: 1rem}
+.categoryMenuItem h4 {color:white; margin:0.5rem 0;}
+.categoryMenuItem .col-sm-6 h4 {color:#53483A; margin:0; font-weight: bold;} 
+.categoryMenuItem .col-sm-6 p {color:#53483A;} 
+.categoryMenuItem .col-xs-12 {background-color: #988165}
+.categoryMenuItemDetails {margin-top:1rem; border-bottom:1px solid #53483A}
+/*End - Menu - itens*/
+
+/*Menu - Who we are*/
+.whoWeAretext {padding-top:1rem}
+.whoWeAretext p { text-indent: 2rem; text-align: justify;}
+/*End - Menu - Who we are*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Home - Type of foods details (plugin)*/
+.box-one {margin:0px 0 20px 0; border:2px solid rgba(0,0,0,0.2); border-radius:4px; background-color:#554A3C; border-top: solid 5px #222; 
+    border-bottom: solid 5px #222; margin-bottom:0px
+}
+.box-one.ng-hide-add {-webkit-animation:0.7s hide;  animation:0.7s hide;}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
 }
 
-.contentBackground {background-color: #554A3C}
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
 
-.footerBottom img {padding: 10px 0;}
-.footerBottom p {padding-top: 16px; color: white; font-size: 11px; font-style: italic;}
 
-.transparentBackground {background-image: url("images/transparentBackground.png"); background-repeat: no-repeat;}
-.transparentBackground p {color: white; font-size: 12px; padding-top: 3px}
+.box-one.ng-hide-remove {
+  -webkit-animation:0.5s show;
+  animation:0.5s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+/*End - Home - Type of foods details (plugin)*/
+
+
+
+/*Home - Form and whoWeAre*/
+.btn-link-1 {
+  display: inline-block;
+  height: 50px;
+  margin: 0 5px;
+  padding: 16px 20px 0 20px;
+  background: #19b9e7;
+  font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
+
+.btn-link-2 {
+  display: inline-block;
+  height: 50px;
+  margin: 0 5px;
+  padding: 15px 20px 0 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #fff;
+  font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+.btn-link-2:hover, .btn-link-2:focus, 
+.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+
+
+
+.form-box {
+  padding-top: 40px;
+}
+
+.form-top {
+  overflow: hidden;
+  padding: 0 25px 15px 25px;
+  background: #fff;
+  -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+  text-align: left;
+}
+
+.form-top-left {
+  float: left;
+  width: 75%;
+  padding-top: 25px;
+}
+
+.form-top-left h3 { margin-top: 0; }
+
+.form-top-right {
+  float: left;
+  width: 25%;
+  padding-top: 5px;
+  font-size: 66px;
+  color: #ddd;
+  line-height: 100px;
+  text-align: right;
+}
+
+.form-bottom {
+  padding: 25px 25px 30px 25px;
+  background: #eee;
+  -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+  text-align: left;
+}
+
+.form-bottom form textarea {
+  height: 100px;
+}
+
+.form-bottom form .input-error {
+  border-color: #19b9e7;
+}
+/*End - Home - Form and whoWeAre*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Menu*/
+
+
+
