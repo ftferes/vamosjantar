@@ -2,7 +2,9 @@
 
 angular.module('myApp.header', ['ngSanitize', 'ui.select', 'duScroll'])
 
-.controller('HeaderCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('HeaderCtrl', ['$scope', '$location', 'waitPage', function($scope, $location, waitPage) {
+
+    $scope.waitPage = waitPage;
 
     $scope.establishments = [ 
         {name: 'Robinho Lanches',   type: 'Lanchonete',  url: '/pizzariadoadao'},

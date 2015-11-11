@@ -1,4 +1,4 @@
-<section id="top" class="container">
+<section ng-hide="waitPage" id="top" class="container">
 
 
 
@@ -125,8 +125,8 @@
 			<div class="form-bottom contact-form whoWeAreBody">
 				<h2><strong>Somos loucos por comida.</strong><h2> 
 				<h3>Acho que nossa primeira semelhança já começa por aí.</h3>
-				<h3><br>O <strong>“Vamos Jantar”</strong> é um site especializado em cardápios e promoção dos principais restaurantes da região. Nascemos para oferecer a você as melhores opções e a oportunidade de sair de casa decidido e pronto para chamar o garçom.</h3>
-				<h3><br>Seja bem-vindo ao “Vamos Jantar”: <strong>a sua mais nova opção em lhe dar opções!</strong></h3>
+				<h3><br>O <strong>“Cardápio Região”</strong> é um site especializado em cardápios e promoção dos principais restaurantes da região. Nascemos para oferecer a você as melhores opções e a oportunidade de sair de casa decidido e pronto para chamar o garçom.</h3>
+				<h3><br>Seja bem-vindo ao “Cardápio Região”: <strong>a sua mais nova opção em lhe dar opções!</strong></h3>
 			</div>
 		</div>
 
@@ -137,7 +137,7 @@
 				</div>
 			</div>
 			<div class="form-bottom contact-form contactBody">
-				<form action="//formspree.io/ftferes@gmail.com" method="POST" name="form">
+				<form action="//formspree.io/contato@cardapioregiao.com.br" method="POST" name="form">
 					<div class="form-group">
 						<input type="email" name="email" placeholder="E-mail*" class="contact-email form-control" id="contact-email" required>
 					</div>
@@ -154,6 +154,13 @@
 			</div>
 		</div>
 	</section>     
+</section>
+
+
+
+
+<section ng-show="waitPage" id="top" class="container-fluid">
+	<img class="img-responsive maxWidth" ng-src="{{imgToWaitPage}}">
 </section>
 
 

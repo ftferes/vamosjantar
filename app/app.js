@@ -14,15 +14,20 @@ angular.module('myApp', [
     'ui.bootstrap'
 ])
 
+.factory('waitPage', function(){
+    return true;
+})
+
+
 .filter('trusted', ['$sce', function ($sce) {
     return function(url) {
         return $sce.trustAsResourceUrl(url);
     };
 }])
 
-// .config(['$routeProvider', function($routeProvider) {
-// 	$routeProvider.otherwise({redirectTo: '/notFound'});
-// }]);
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.otherwise({redirectTo: '/notFound'});
+}]);
 
 
 

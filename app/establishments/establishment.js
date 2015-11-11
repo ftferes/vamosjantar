@@ -36,11 +36,26 @@ angular.module('myApp.establishment', ['ngRoute', 'angular-flexslider'])
             facebookLink: "http://www.facebook.com"
         },
         photos:[
-            "images/pizzariadoadao/photos/img1.jpg",
-            "images/pizzariadoadao/photos/img2.jpg", 
-            "images/pizzariadoadao/photos/img3.jpg",
-            "images/pizzariadoadao/photos/img4.jpg",
-            "images/pizzariadoadao/photos/img5.jpg"
+            {
+                url: "images/pizzariadoadao/photos/img1.jpg",
+                subtitle: "Legenda da foto 1"
+            },
+            {
+                url: "images/pizzariadoadao/photos/img2.jpg",
+                subtitle: "Legenda da foto 2"
+            },
+            {
+                url: "images/pizzariadoadao/photos/img3.jpg",
+                subtitle: "Legenda da foto 3"
+            },
+            {
+                url: "images/pizzariadoadao/photos/img4.jpg",
+                subtitle: "Legenda da foto 4"
+            },
+            {
+                url: "images/pizzariadoadao/photos/img5.jpg",
+                subtitle: "Legenda da foto 5"
+            }
         ],
         whoWeAre: {
             texts: [
@@ -52,8 +67,14 @@ angular.module('myApp.establishment', ['ngRoute', 'angular-flexslider'])
         },
         googleMapsLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3220371300877!2d-48.315343784521346!3d-21.258716486485877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96c9b94081e43%3A0xaaa3aa396db132c3!2sTropical+Lanches!5e0!3m2!1spt-BR!2sbr!4v1446839435353",
         videos: [
-            "https://www.youtube.com/embed/aiHDYRHxtgM",
-            "http://www.facebook.com/video/embed?video_id=628132747223650"
+            {
+                url: "https://www.youtube.com/embed/aiHDYRHxtgM",
+                subtitle: "Legenda do video 1"
+            },
+            {
+                url: "http://www.facebook.com/video/embed?video_id=628132747223650",
+                subtitle: "Legenda do video 2"
+            }
         ],
         menu: [
             {

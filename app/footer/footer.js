@@ -2,7 +2,10 @@
 
 angular.module('myApp.footer', ['angular-flexslider'])
 
-.controller('FooterCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('FooterCtrl', ['$scope', '$location', 'waitPage', function($scope, $location, waitPage) {
+
+    $scope.waitPage = waitPage;
+
 
     $scope.showThisMenu = function(page) {
         return page === $location.path().substring(1) ? true: false;

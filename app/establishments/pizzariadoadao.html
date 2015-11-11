@@ -90,11 +90,11 @@
 
 	<div class="row">
       	<flex-slider class="col-xs-12" slider-id="slider" flex-slide="photo in establishment.photos track by $index" animation="fade" animation-loop="false" sync="#carousel" slideshow="false" control-nav="false">
-		    <li><img ng-src="{{photo}}"></li>
+		    <li class="text-center"><img ng-src="{{photo.url}}"> <label style="padding-top:0.8rem">{{photo.subtitle}}</label></li>
       	</flex-slider>
 
    		<flex-slider class="col-xs-12" style="margin-top:-55px; margin-bottom:-40px" slider-id="carousel" flex-slide="photo in establishment.photos track by $index" animation="slide" animation-loop="false" item-width="100px"  min-items="2" max-items="4" as-nav-for="#slider" slideshow="false" control-nav="false" move="1">
-		    <li><img ng-src="{{photo}}"></li>
+		    <li><img ng-src="{{photo.url}}"></li>
       	</flex-slider>
 	</div>
 
@@ -139,7 +139,8 @@
 
 	<div class="row">
 		<div class="col-md-6" ng-repeat="video in establishment.videos track by $index">
-			<iframe ng-src="{{video | trusted}}" height="320"  width="100%" frameborder="0" allowfullscreen></iframe>
+			<iframe ng-src="{{video.url | trusted}}" height="320"  width="100%" frameborder="0" allowfullscreen></iframe>
+			<label>{{video.subtitle}}</label>
 		</div>
 	</div>
   
